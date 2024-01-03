@@ -1,9 +1,8 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { register } from 'components/redux/auth/operation';
 import {
-  RegisterContainer,
   RegisterFormButton,
   RegisterFormInput,
   RegisterFormStyled,
