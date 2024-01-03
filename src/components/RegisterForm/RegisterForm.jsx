@@ -77,7 +77,7 @@ export const RegisterForm = () => {
         />
         <ErrorMessage component="div" name="password" />
 
-        <RegisterFormButton type="submit"> Sign Up</RegisterFormButton>
+        <RegisterFormButton type="submit">Sign Up</RegisterFormButton>
       </RegisterFormStyled>
     </Formik>
   );
