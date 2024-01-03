@@ -6,8 +6,9 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { toast } from 'react-toastify';
-import { addContact } from 'components/store/operations';
-import { selectContacts } from 'components/store/selectors';
+
+import { addContact } from 'components/redux/contacts/operation';
+import { selectContacts } from 'components/redux/contacts/selectors';
 
 const schema = yup.object().shape({
   name: yup
@@ -15,7 +16,7 @@ const schema = yup.object().shape({
     .min(2, 'Too Short!')
     .max(30, 'Too Long!')
     .required('Required name'),
-  phone: yup
+  number: yup
     .number()
     .typeError("That doesn't look like a phone number")
     .positive("A phone number can't start with a minus")
@@ -47,7 +48,7 @@ export const ContactFormFormik = () => {
 
   return (
     <Formik
-      initialValues={{ name: '', phone: '' }}
+      initialValues={{ name: '', number: '' }}
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
@@ -69,10 +70,10 @@ export const ContactFormFormik = () => {
           <FormInput
             id={numberId}
             type="tel"
-            name="phone"
+            name="number"
             pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
           ></FormInput>
-          <ErrorMessage name="phone" component="div" />
+          <ErrorMessage name="number" component="div" />
         </label>
 
         <FormButton type="submit">Add contact</FormButton>

@@ -1,14 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ContactListElements, DeleteContactBtn } from './ContactList.styled';
-import { deleteContact, fetchContacts } from 'components/store/operations';
+
 import { useEffect } from 'react';
+
+import Loader from 'components/Loader/Loader';
+import { toast } from 'react-toastify';
+import {
+  deleteContact,
+  fetchContacts,
+} from 'components/redux/contacts/operation';
 import {
   selectError,
   selectIsLoading,
   selectVisibleContacts,
-} from 'components/store/selectors';
-import Loader from 'components/Loader/Loader';
-import { toast } from 'react-toastify';
+} from 'components/redux/contacts/selectors';
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -33,9 +38,11 @@ const ContactList = () => {
       <ul>
         {isLoading && <Loader />}
         {!!filteredContacts.length &&
-          filteredContacts.map(({ name, phone, id }) => (
+          filteredContacts.map(({ name, number, id }) => (
             <ContactListElements key={id}>
-              <p>{name}</p>:<p>{phone}</p>
+              <p>
+                {name}:{number}
+              </p>
               <DeleteContactBtn type="button" onClick={() => deleteItem(id)}>
                 Delete
               </DeleteContactBtn>

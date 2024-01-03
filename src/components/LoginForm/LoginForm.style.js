@@ -1,16 +1,15 @@
-import { Form, Field } from 'formik';
 import styled from 'styled-components';
-export const FormStyled = styled(Form)`
+import { Form, Field } from 'formik';
+
+export const LoginFormStyled = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 300px;
 `;
 
-export const FormButton = styled.button`
+export const LoginFormButton = styled.button`
   margin: auto;
-  align-items: center;
-  text-transform: capitalize;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -20,7 +19,7 @@ export const FormButton = styled.button`
   padding: 5px;
 `;
 
-export const FormInput = styled(Field)`
+export const LoginFormInput = styled(Field)`
   background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 4px;

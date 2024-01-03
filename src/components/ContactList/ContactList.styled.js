@@ -2,22 +2,24 @@ import styled from 'styled-components';
 
 export const ContactListElements = styled.ul`
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-bottom: 10px;
-  padding: 15px;
-  justify-content: flex-start;
-  text-align: center;
+  justify-content: space-between;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(95, 158, 160, 0.308);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  height: auto;
+  margin: 5px;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
 `;
 
 export const DeleteContactBtn = styled.button`
   align-items: center;
-  text-transform: capitalize;
+
   border: none;
   border-radius: 5px;
   cursor: pointer;
