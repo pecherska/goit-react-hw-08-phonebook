@@ -20,6 +20,7 @@ export const RegisterForm = () => {
         password: password,
       })
     );
+    console.log(name);
     resetForm();
   };
 
