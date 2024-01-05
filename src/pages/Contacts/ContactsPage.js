@@ -20,6 +20,7 @@ export default function ContactsPage() {
   const error = useSelector(selectError);
   const dispatch = useDispatch();
   const selectedContacts = useSelector(selectVisibleContacts);
+  console.log(selectedContacts);
 
   useEffect(() => {
     if (!!error) {
@@ -37,7 +38,7 @@ export default function ContactsPage() {
       <SubContactTitle>Contacts</SubContactTitle>
       <Filter />
 
-      {!!selectedContacts.length && <ContactList contacts={selectedContacts} />}
+      {!!selectedContacts.length && <ContactList />}
     </ContactsContainer>
   );
 }
